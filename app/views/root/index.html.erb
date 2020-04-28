@@ -1,0 +1,22 @@
+<h1>Form with visible CSRF token</h1>
+
+<pre>Rails.application.config.action_controller.urlsafe_csrf_tokens = <%= Rails.application.config.action_controller.urlsafe_csrf_tokens.inspect %></pre>
+
+<% if flash.notice %>
+  <p style="color:green">
+    <%= flash.notice %>
+  </p>
+<% end %>
+
+<%= form_with url: root_path do |form| %>
+  <pre id=fake-input>&lt;input type=hidden value={value}&gt;</pre>
+  <%= form.submit %>
+<% end %>
+
+<script>
+  document.querySelector("#fake-input").innerText =
+    document.querySelector("#fake-input").innerText.replace('{value}',
+      `"${document.querySelector("form input[type=hidden]").value}"`)
+
+  document.addEventListener("ajax:error", function(event) { alert("CSRF failed!") })
+</script>
