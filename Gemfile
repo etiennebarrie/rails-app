@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.1'
 
-gem 'rails', github: "rails/rails", branch: "6-0-stable"
+gem 'rails', github: "etiennebarrie/rails", branch: "upgrade-safe-urlsafe-csrf-tokens"
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
