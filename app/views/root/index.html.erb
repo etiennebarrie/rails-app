@@ -1,0 +1,12 @@
+<h1>Path generation with splat</h1>
+
+<%= link_to "hi", path_generation_path(thing: "a\nnew line") %>
+
+<% if params[:bug].present? %>
+
+  <%# This fails to generate a path whereas the line above manages to escape the \n character %>
+  <%= link_to "hi", path_generation_splat_path(thing: "a\nnew line") %>
+
+<% else %>
+  <%= link_to "Show bug", root_path(bug: "true") %>
+<% end %>
