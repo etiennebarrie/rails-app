@@ -1,0 +1,14 @@
+<h1>CurrentAttributes are fiber-local</h1>
+
+<dl>
+  <dt>Current.random</dt>
+  <dd><%= Current.random %></dd>
+  <dt>Current.random called from inside an enumerator with <code>#next</code></dt>
+  <dd><%= enumerator.next.inspect %></dd>
+  <dt>Current.random called from inside an enumerator with <code>#first</code></dt>
+  <dd><%= enumerator.first.inspect %></dd>
+  <dt>Current.random called from inside an enumerator with <code>#each</code></dt>
+  <% enumerator.each do |value| %>
+    <dd><%= value.inspect %></dd>
+  <% end %>
+</dl>
