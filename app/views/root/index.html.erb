@@ -1,4 +1,10 @@
-<h1>CurrentAttributes are fiber-local</h1>
+<h1>CurrentAttributes are
+  <% if Rails.application.config.active_support.current_attributes_use_thread_variables %>
+    thread-local
+  <% else %>
+    fiber-local
+  <% end %>
+</h1>
 
 <dl>
   <dt>Current.random</dt>
