@@ -1,20 +1,19 @@
-<h1>CurrentAttributes are
-  <% if Rails.application.config.active_support.current_attributes_use_thread_variables %>
-    thread-local
-  <% else %>
-    fiber-local
-  <% end %>
-</h1>
+<h1>CurrentAttributes</h1>
+<h2>Current is fiber-local, ThreadCurrent is thread-local</h2>
 
 <dl>
   <dt>Current.random</dt>
   <dd><%= Current.random %></dd>
   <dt>Current.random called from inside an enumerator with <code>#next</code></dt>
-  <dd><%= enumerator.next.inspect %></dd>
+  <dd><%= enumerator { Current.random }.next.inspect %></dd>
   <dt>Current.random called from inside an enumerator with <code>#first</code></dt>
-  <dd><%= enumerator.first.inspect %></dd>
+  <dd><%= enumerator { Current.random }.first.inspect %></dd>
   <dt>Current.random called from inside an enumerator with <code>#each</code></dt>
-  <% enumerator.each do |value| %>
+  <% enumerator { Current.random }.each do |value| %>
     <dd><%= value.inspect %></dd>
   <% end %>
+  <dt>ThreadCurrent.random</dt>
+  <dd><%= ThreadCurrent.random %></dd>
+  <dt>ThreadCurrent.random called from inside an enumerator with <code>#next</code></dt>
+  <dd><%= enumerator { ThreadCurrent.random }.next.inspect %></dd>
 </dl>
