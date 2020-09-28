@@ -7,8 +7,8 @@ class RootController < ApplicationController
 private
 
   def set_current
-    Current.random = rand(100)
-    ThreadCurrent.random = rand(100)
+    Current.random ||= rand(100)
+    ThreadCurrent.random ||= rand(100)
   end
 
   helper_method def enumerator
