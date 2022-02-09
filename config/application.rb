@@ -10,6 +10,7 @@ module RailsApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    config.active_record.check_schema_cache_dump_version = false
 
     # Configuration for the application, engines, and railties goes here.
     #
