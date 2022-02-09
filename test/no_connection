@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -euxo pipefail
+
+chmod a-r db/development.sqlite3
+trap "chmod a-r db/development.sqlite3" EXIT
+
+bin/rails r - <<EORUBY
+  Account.attribute_types
+  Account.columns
+  Account.columns_hash
+  Account.column_defaults
+  Account.primary_key
+  Account.table_exists?
+  Account.new.attributes
+EORUBY
