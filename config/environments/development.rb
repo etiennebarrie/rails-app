@@ -41,6 +41,8 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  p development: deprecators.each.count
+
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
