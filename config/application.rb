@@ -10,7 +10,7 @@ module RailsApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
-    config.active_support.deprecation_behavior = :raise
+    config.active_support.deprecation = :raise
 
     # Configuration for the application, engines, and railties goes here.
     #
