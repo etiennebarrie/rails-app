@@ -10,10 +10,11 @@ module RailsApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.1
-    config.active_support.deprecation = :raise
+    config.active_support.disallowed_deprecation = :raise
 
     p application: deprecators.each.count
 
+    config.active_support.disallowed_deprecation_warnings = [/purge.*attachments/]
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
