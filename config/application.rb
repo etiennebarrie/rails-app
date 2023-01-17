@@ -19,9 +19,8 @@ module RailsApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    config.active_record.yaml_column_permitted_classes = [Symbol, Hash, Array, ActiveModel::Attribute.const_get(:FromDatabase), ActiveSupport::TimeWithZone, Time, ActiveSupport::TimeZone]
     config.after_initialize do
-      ActiveRecord::Base.yaml_column_permitted_classes << User
+      ActiveRecord.yaml_column_permitted_classes = [Symbol, Hash, Array, ActiveModel::Attribute.const_get(:FromDatabase), ActiveSupport::TimeWithZone, Time, ActiveSupport::TimeZone, User]
     end
   end
 end
