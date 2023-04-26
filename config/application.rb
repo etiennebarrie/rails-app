@@ -8,8 +8,11 @@ Bundler.require(*Rails.groups)
 
 module RailsApp
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 7.0
+    if ENV["RAILS_71_DEFAULTS"]
+      config.load_defaults 7.1
+    else
+      config.load_defaults 7.0
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #

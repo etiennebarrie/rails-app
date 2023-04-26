@@ -1,0 +1,12 @@
+<h1>Encrypted message</h1>
+<p>Encrypted message: <code><%= @encrypted_message %></code></p>
+<p>Base64 decode in hex: <code><%= Encrypted.base64_decoded_hex(@encrypted_message) %></code></p>
+<p>Decrypted data: <code><%= Encrypted.decrypted_data(@encrypted_message) %></code></p>
+
+<%= form_with url: verify_path do |form| %>
+  <%= hidden_field_tag :encrypted_message, @encrypted_message %>
+  <%= form.submit "Verify" %>
+<% end %>
+
+<% if flash.notice %><p style=color:green><%= flash.notice %></p><% end %>
+<% if flash.alert %><p style=color:red><%= flash.alert %></p><% end %>
