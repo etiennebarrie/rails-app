@@ -1,0 +1,9 @@
+---
+test_warning_gets_handled_by_deprecation_toolkit:
+- 'DEPRECATION WARNING: foo
+
+  '
+test_deprecation_warning_is_handled_by_deprecation_toolkit:
+- 'DEPRECATION WARNING: deprecated
+
+  '
