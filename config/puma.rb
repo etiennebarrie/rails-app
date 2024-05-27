@@ -18,6 +18,10 @@ if ENV["RAILS_ENV"] == "production"
   workers worker_count if worker_count > 1
 end
 
+on_booted do
+  ActiveRecord::Base.connection.connect!
+end
+
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
 # terminating a worker in development environments.
 worker_timeout 3600 if ENV.fetch("RAILS_ENV", "development") == "development"
