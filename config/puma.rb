@@ -19,7 +19,7 @@ if ENV["RAILS_ENV"] == "production"
 end
 
 on_booted do
-  ActiveRecord::Base.connection.connect!
+  ActiveRecord::Base.connection
 end
 
 # Specifies the `worker_timeout` threshold that Puma will use to wait before
