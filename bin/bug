@@ -1,0 +1,21 @@
+#!/bin/bash
+
+set -exm
+
+: "${PORT:=3000}"
+
+if nc -z localhost "$PORT"; then
+	echo "port $PORT already in use"
+	exit 1
+fi
+
+bin/rails server &
+trap 'kill %1' EXIT
+
+until nc -z localhost "$PORT"; do
+	sleep 1;
+done
+
+touch app/models/application_record.rb
+: This should take less than 10 seconds
+time curl -s http://localhost:"$PORT" >/dev/null
