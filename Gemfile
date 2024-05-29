@@ -54,4 +54,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "maintenance_tasks", "~> 2.7"
+gem "maintenance_tasks", github: "Shopify/maintenance_tasks"
