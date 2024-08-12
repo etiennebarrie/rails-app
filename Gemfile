@@ -65,3 +65,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "brakeman", "~> 6.1", require: false
