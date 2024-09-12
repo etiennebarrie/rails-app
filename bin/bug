@@ -1,0 +1,19 @@
+#!/usr/bin/env -S bin/rails runner
+
+require "minitest"
+
+include Minitest::Assertions
+singleton_class.attr_accessor :assertions
+self.assertions = 0
+
+def test
+  assert_output(<<~STDIN) do
+    == ActiveSupport.on_load(:foo)
+  STDIN
+    _ = Foo
+  end
+end
+
+test
+capture_io { Rails.application.reloader.reload! }
+test
