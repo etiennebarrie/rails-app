@@ -1,0 +1,2 @@
+class SomeRecord < ApplicationRecord
+end
