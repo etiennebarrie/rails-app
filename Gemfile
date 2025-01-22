@@ -28,3 +28,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "deprecation_toolkit", "~> 2.2"
