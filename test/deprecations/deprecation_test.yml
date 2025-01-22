@@ -1,0 +1,4 @@
+---
+test_deprecation:
+- 'DEPRECATION WARNING: Array#to_s(:db) is deprecated. Please use Array#to_fs(:db)
+  instead.'
