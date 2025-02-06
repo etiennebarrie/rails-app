@@ -1,24 +1,18 @@
-# README
+** SIEGE 4.1.7
+** Preparing 25 concurrent users for battle.
+The server is now under siege...
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Lifting the server siege...
+Transactions:		       63    hits
+Availability:		      100.00 %
+Elapsed time:		        3.44 secs
+Data transferred:	        0.17 MB
+Response time:		     1130.79 ms
+Transaction rate:	       18.31 trans/sec
+Throughput:		        0.05 MB/sec
+Concurrency:		       20.71
+Successful transactions:       61
+Failed transactions:	        0
+Longest transaction:	     1620.00 ms
+Shortest transaction:	      340.00 ms
+ 
