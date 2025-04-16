@@ -1,0 +1,3 @@
+---
+test_simulate_gem_deprecation:
+- 'DEPRECATION WARNING: this is deprecated'
