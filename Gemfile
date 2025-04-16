@@ -63,3 +63,5 @@ group :test do
 end
 
 gem "deprecation_toolkit", "~> 2.2", :group => :test
+
+gem "maintenance_tasks", "~> 2.11"
