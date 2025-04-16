@@ -1,7 +1,8 @@
 require "test_helper"
 
 class SomeRecordTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "simulate gem deprecation" do
+    MaintenanceTasks.deprecator.warn("this is deprecated")
+    pass
+  end
 end
