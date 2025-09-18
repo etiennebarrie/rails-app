@@ -1,0 +1,5 @@
+#!/bin/sh
+
+RAILS_MAX_THREADS=1 \
+SECRET_KEY_BASE=$(bin/rails secret) \
+exec bin/rails s -e production >/dev/null
