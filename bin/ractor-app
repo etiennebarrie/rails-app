@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+ENV["SECRET_KEY_BASE"] = `bin/rails secret`
+ENV["RAILS_ENV"] = "production"
+require_relative "../config/environment"
+
+app = Rails.application.app
+Ractor.make_shareable app
