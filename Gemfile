@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Use specific branch of Rails
-gem "rails", github: "rails/rails", branch: "main"
+gem "rails", github: "Shopify/rails", branch: "wip-ractor-make-shareable-rails-application"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use sqlite3 as the database for Active Record
