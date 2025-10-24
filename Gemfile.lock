@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/rails.git
-  revision: 91394f52a33769ac4abef88be5424aa002efeeb7
+  revision: 8ec34b006d5832193bd1af2a9632e56d2d0e0b9d
   branch: wip-ractor-make-shareable-rails-application
   specs:
     actioncable (8.2.0.alpha)

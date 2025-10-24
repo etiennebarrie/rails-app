@@ -23,5 +23,6 @@ module RailsApp
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.middleware.delete ::ActionDispatch::Executor # FIXME: ActionDispatch::Executor writes to instance variables of classes/modules
   end
 end
