@@ -10,34 +10,24 @@ Rails.application.ractor_shareable
 puts "Ractor.shareable?(Rails.application) # => #{Ractor.shareable?(Rails.application)}"
 puts
 
-rack_errors = StringIO.new
-env = {
-  "REQUEST_METHOD" =>  "GET",
-  "SERVER_NAME" =>     "www.example.com",
-  "SERVER_PORT" =>     "80",
-  "SERVER_PROTOCOL" => "HTTP/1.0",
-  "QUERY_STRING" =>    "",
-  "PATH_INFO" =>       "/",
-  "rack.url_scheme" => "http",
-  "HTTPS" =>           "off",
-  "SCRIPT_NAME" =>     "",
-  "rack.errors" =>     rack_errors,
-  "rack.test" =>       true,
-  "REMOTE_ADDR" =>     "127.0.0.1",
-  "REQUEST_URI" =>     "/",
-  "HTTP_HOST" =>       "www.example.com",
-  "HTTP_ACCEPT" =>     "text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5"
-}
+require "cougar"
+require "rack"
 
-status, headers, response = Rails.application.call env
-puts "HTTP/1.1 #{status}"
-puts headers.map { "#{_1}: #{_2}" }
-puts
-if response.respond_to? :each
-  response.each { print it }
-else
-  response.call $stdout
+# Load the Rack app from config.ru
+app, _options = Rack::Builder.parse_file("config.ru")
+
+# Start the server (uses RUBY_MAX_CPU env var or defaults to 8 workers)
+ENV["RUBY_MAX_CPU"] = "1"
+server = Cougar::Server.new(app, host: "0.0.0.0", port: 9292)
+
+proc do
+  puts "\nShutting down..."
+  server.stop
+  exit
 end
-response.close if response.respond_to? :close
-print rack_errors.string
-$stdout.flush
+  .then do
+    trap("INT", &it)
+    trap("TERM", &it)
+  end
+
+server.run
