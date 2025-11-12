@@ -5,6 +5,7 @@ require "rails/all"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+require_relative "../lib/monkey_patch/i18n"
 
 module RailsApp
   class Application < Rails::Application
@@ -14,7 +15,7 @@ module RailsApp
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
     # Common ones are `templates`, `generators`, or `middleware`, for example.
-    config.autoload_lib(ignore: %w[assets tasks])
+    config.autoload_lib(ignore: %w[assets tasks monkey_patch])
 
     # Configuration for the application, engines, and railties goes here.
     #
