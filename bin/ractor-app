@@ -1,14 +1,14 @@
 #!/usr/bin/env ruby
 
+print "Booting application..."
+$stdout.flush
 ENV["SECRET_KEY_BASE"] = `bin/rails secret`
 ENV["RAILS_ENV"] = "production"
 require_relative "../config/environment"
+puts " done."
 
-puts "Ractor.shareable?(Rails.application) # => #{Ractor.shareable?(Rails.application)}"
-puts "Rails.application.ractor_shareable"
 Rails.application.ractor_shareable
-puts "Ractor.shareable?(Rails.application) # => #{Ractor.shareable?(Rails.application)}"
-puts
+raise unless Ractor.shareable?(Rails.application)
 
 require "cougar"
 require "rack"
