@@ -7,7 +7,7 @@ ENV["RAILS_ENV"] = "production"
 require_relative "../config/environment"
 puts " done."
 
-Rails.application.ractor_shareable
+Rails.application.ractor_shareable!
 raise unless Ractor.shareable?(Rails.application)
 
 require "cougar"
