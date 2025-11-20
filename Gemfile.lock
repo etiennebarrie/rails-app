@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/rails.git
-  revision: 83463704cc44c3c5c7b88a991ec7c0b64f601263
+  revision: 8363483a069973e1baf893ce51829af2ef4eed92
   branch: wip-ractor-make-shareable-rails-application
   specs:
     actioncable (8.2.0.alpha)
@@ -106,6 +106,13 @@ GIT
     llhttp (0.6.1)
 
 GIT
+  remote: https://github.com/etiennebarrie/json.git
+  revision: 76ed0f4dc9ee6bff02c719473d8f2ad1827b2415
+  branch: ractor-shareable-json-coder
+  specs:
+    json (2.16.0)
+
+GIT
   remote: https://github.com/jhawthorn/cougar.git
   revision: 0d0f507bbe438ed8df8c3722d46d5c8319778b05
   specs:
@@ -181,7 +188,6 @@ GEM
     jbuilder (2.14.1)
       actionview (>= 7.0.0)
       activesupport (>= 7.0.0)
-    json (2.13.2)
     kamal (2.7.0)
       activesupport (>= 7.0)
       base64 (~> 0.2)
@@ -309,11 +315,9 @@ GEM
       logger
     rubyzip (3.1.1)
     securerandom (0.4.1)
-    selenium-webdriver (4.36.0)
+    selenium-webdriver (4.38.0)
       base64 (~> 0.2)
-      json (<= 2.13.2)
       logger (~> 1.4)
-      prism (~> 1.0, < 1.5)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
@@ -378,6 +382,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  json!
   kamal
   llhttp!
   propshaft
@@ -438,7 +443,7 @@ CHECKSUMS
   io-console (0.8.1) sha256=1e15440a6b2f67b6ea496df7c474ed62c860ad11237f29b3bd187f054b925fcb
   irb (1.15.2) sha256=222f32952e278da34b58ffe45e8634bf4afc2dc7aa9da23fed67e581aa50fdba
   jbuilder (2.14.1) sha256=4eb26376ff60ef100cb4fd6fd7533cd271f9998327e86adf20fd8c0e69fabb42
-  json (2.13.2) sha256=02e1f118d434c6b230a64ffa5c8dee07e3ec96244335c392eaed39e1199dbb68
+  json (2.16.0)
   kamal (2.7.0) sha256=66b863d967a740886a1817f7e181849c100dfcd4bdf1d8695d9c20828313b4f8
   language_server-protocol (3.17.0.5) sha256=fd1e39a51a28bf3eec959379985a72e296e9f9acfce46f6a79d31ca8760803cc
   lint_roller (1.1.0) sha256=2c0c845b632a7d172cb849cc90c1bce937a28c5c8ccccb50dfd46a485003cc87
@@ -497,7 +502,7 @@ CHECKSUMS
   ruby-vips (2.2.5) sha256=f3c547a172c36ba26b8614c809f5823bc6199623ec6204ec7c3bce29037f7758
   rubyzip (3.1.1) sha256=54c97dd156437018c6914d76df52d10560a3b7784de36b1551e4a0709f958273
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
-  selenium-webdriver (4.36.0) sha256=da222898011772280908d511750f387d45b5323f6f9c7c19cb77ec4dcbe71c9f
+  selenium-webdriver (4.38.0) sha256=0a84e71fef66394ae8d9290d3a5bc24b33de49d45a7aa57fc09f246218bf102f
   solid_cable (3.0.12) sha256=a168a54731a455d5627af48d8441ea3b554b8c1f6e6cd6074109de493e6b0460
   solid_queue (1.2.1) sha256=7976b3690a08080ef63d1b11281f0b77398f7697dbeda0e2c5532682639d4b15
   sqlite3 (2.7.4) sha256=7fbc1fdb18ba1c0798fb298cb3c35c35bb1743b832a9aeb91add026a5614889c
