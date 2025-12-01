@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+SECRET_KEY_BASE=$(bin/rails secret)
+RAILS_ENV=production
+export SECRET_KEY_BASE RAILS_ENV
+
+exec bin/rails server -p 9292
