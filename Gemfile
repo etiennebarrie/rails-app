@@ -17,7 +17,7 @@ gem "importmap-rails"
 # gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-gem "json", github: "etiennebarrie/json", branch: "ractor-shareable-json-coder"
+gem "json"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
