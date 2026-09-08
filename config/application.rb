@@ -18,6 +18,9 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+# Cougar serves each request from a Ractor worker.
+ENV["RACKUP_HANDLER"] ||= "cougar" if Rails.env.ractor?
+
 module RailsApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.

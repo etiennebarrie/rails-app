@@ -4,3 +4,8 @@ require_relative "config/environment"
 
 run Rails.app
 Rails.application.load_server
+
+if ENV["RAILS_ENV"] == "ractor"
+  require "i18n/ractorize"
+  Rails.application.ractorize!
+end

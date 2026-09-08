@@ -1,7 +1,12 @@
 source "https://rubygems.org"
 
 # Use main development branch of Rails
-gem "rails", github: "rails/rails", branch: "main"
+gem "rails", github: "Shopify/rails", branch: "ractor-debuggable-workers"
+# Unreleased rack is needed for rack/ractorize, and cougar serves each request from a Ractor worker.
+gem "rack", github: "rack/rack"
+gem "cougar", github: "jhawthorn/cougar"
+# i18n keeps its configuration in class variables, which non-main Ractors cannot read.
+gem "i18n", github: "https://github.com/ruby-i18n/i18n/pull/741"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
 # Use the Puma web server [https://github.com/puma/puma]
