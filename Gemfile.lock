@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Shopify/rails.git
-  revision: 98d5b8e00566b66299deb8c2c73dbcf8d06d8e58
+  revision: 44c28c6d048144f1105ccb0a9d73fbcc3281f054
   branch: ractor-debuggable-workers
   specs:
     actioncable (8.2.0.alpha)
